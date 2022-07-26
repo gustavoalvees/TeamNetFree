@@ -10,16 +10,16 @@ Repositorio cujo objetivo de ajudar usuarios de internet gratuita ( via tunnel s
  < --- CloudFlare x CloudFront--- >
  <       Dominio Apenas ( Direct )  >
  
-GET / HTTP/1.1[crlf]Host: {dominio}[crlf]Connection: Upgrade[crlf]Upgrade: Websocket[crlf][crlf]
+GET / HTTP/1.1[crlf]Host: {sub_dominio}[crlf]Connection: Upgrade[crlf]Upgrade: Websocket[crlf][crlf]
 
  < --- CloudFlare x CloudFront--- >
  <          Server+Dominio        >
  
-GET wss://{servidorssh}/ HTTP/1.1[crlf]Host:{ dominio}[crlf]Connection: Upgrade[crlf]Upgrade: Websocket[crlf][crlf]
+GET wss://{SNI}/ HTTP/1.1[crlf]Host: {sub_dominio} [crlf]Connection: Upgrade[crlf]Upgrade: Websocket[crlf][crlf]
 
  < --- CloudFront--- >
  <  Server+Dominio   >
-GET sni://{SNI} HTTP/1.1[crlf]Host: {Dominio}[crlf]Connection: Upgrade[crlf]Upgrade: Websocket[crlf][crlf]
+GET sni://{SNI} HTTP/1.1[crlf]Host: {sub_dominio}[crlf]Connection: Upgrade[crlf]Upgrade: Websocket[crlf][crlf]
 
 ```
 
@@ -29,8 +29,7 @@ GET sni://{SNI} HTTP/1.1[crlf]Host: {Dominio}[crlf]Connection: Upgrade[crlf]Upgr
             Exemplos de dominios>
                 - br1.seconvpn.tk
                 - d1k34qllbexpyg.cloudfront.net
-                - nasa.tl
-                  - Entre outros...
+                - ca.speedgame.xyz
     
     >Host
         - 
